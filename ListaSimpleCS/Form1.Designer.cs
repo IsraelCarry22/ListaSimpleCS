@@ -28,45 +28,79 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
-            txtDato = new TextBox();
-            Crearnodo = new Button();
+            btmAdd = new Button();
+            btmRemove = new Button();
+            txtNombre = new TextBox();
+            listLista = new ListBox();
+            btmCreate = new Button();
+            txtNumNodos = new TextBox();
             SuspendLayout();
             // 
-            // label1
+            // btmAdd
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(28, 78);
-            label1.Name = "label1";
-            label1.Size = new Size(38, 15);
-            label1.TabIndex = 0;
-            label1.Text = "label1";
+            btmAdd.Location = new Point(359, 12);
+            btmAdd.Name = "btmAdd";
+            btmAdd.Size = new Size(75, 23);
+            btmAdd.TabIndex = 2;
+            btmAdd.Text = "ADD";
+            btmAdd.UseVisualStyleBackColor = true;
+            btmAdd.Click += btmAdd_Click;
             // 
-            // txtDato
+            // btmRemove
             // 
-            txtDato.Location = new Point(125, 75);
-            txtDato.Name = "txtDato";
-            txtDato.Size = new Size(100, 23);
-            txtDato.TabIndex = 1;
+            btmRemove.Location = new Point(359, 41);
+            btmRemove.Name = "btmRemove";
+            btmRemove.Size = new Size(75, 23);
+            btmRemove.TabIndex = 3;
+            btmRemove.Text = "REMOVE";
+            btmRemove.UseVisualStyleBackColor = true;
+            btmRemove.Click += btmRemove_Click;
             // 
-            // Crearnodo
+            // txtNombre
             // 
-            Crearnodo.Location = new Point(273, 74);
-            Crearnodo.Name = "Crearnodo";
-            Crearnodo.Size = new Size(75, 23);
-            Crearnodo.TabIndex = 2;
-            Crearnodo.Text = "button1";
-            Crearnodo.UseVisualStyleBackColor = true;
-            Crearnodo.Click += Crearnodo_Click;
+            txtNombre.Location = new Point(8, 12);
+            txtNombre.Name = "txtNombre";
+            txtNombre.Size = new Size(345, 23);
+            txtNombre.TabIndex = 4;
+            // 
+            // listLista
+            // 
+            listLista.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            listLista.FormattingEnabled = true;
+            listLista.ItemHeight = 21;
+            listLista.Location = new Point(8, 41);
+            listLista.Name = "listLista";
+            listLista.Size = new Size(345, 193);
+            listLista.TabIndex = 5;
+            // 
+            // btmCreate
+            // 
+            btmCreate.Location = new Point(359, 245);
+            btmCreate.Name = "btmCreate";
+            btmCreate.Size = new Size(75, 23);
+            btmCreate.TabIndex = 7;
+            btmCreate.Text = "CREATE";
+            btmCreate.UseVisualStyleBackColor = true;
+            btmCreate.Click += btmCreate_Click;
+            // 
+            // txtNumNodos
+            // 
+            txtNumNodos.Location = new Point(253, 246);
+            txtNumNodos.Name = "txtNumNodos";
+            txtNumNodos.Size = new Size(100, 23);
+            txtNumNodos.TabIndex = 6;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(403, 179);
-            Controls.Add(Crearnodo);
-            Controls.Add(txtDato);
-            Controls.Add(label1);
+            ClientSize = new Size(446, 281);
+            Controls.Add(btmCreate);
+            Controls.Add(txtNumNodos);
+            Controls.Add(listLista);
+            Controls.Add(txtNombre);
+            Controls.Add(btmRemove);
+            Controls.Add(btmAdd);
             Name = "Form1";
             Text = "Form1";
             ResumeLayout(false);
@@ -74,9 +108,11 @@
         }
 
         #endregion
-
-        private Label label1;
-        private TextBox txtDato;
-        private Button Crearnodo;
+        private Button btmAdd;
+        private Button btmRemove;
+        private TextBox txtNombre;
+        private ListBox listLista;
+        private Button btmCreate;
+        private TextBox txtNumNodos;
     }
 }
