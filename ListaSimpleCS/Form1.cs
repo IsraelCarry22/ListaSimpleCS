@@ -1,9 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Threading.Tasks.Dataflow;
 using ListaSimpleCS.Clases;
 
 namespace ListaSimpleCS
@@ -19,9 +13,11 @@ namespace ListaSimpleCS
 
         private void btmAdd_Click(object sender, EventArgs e)
         {
-            Nodo MiNodo = new Nodo();
-            MiNodo.Id = Lindek_List.NextId;
-            MiNodo.Name = txtNombre.Text;
+            Nodo MiNodo = new Nodo
+            {
+                Id = Lindek_List.NextId,
+                Name = txtNombre.Text
+            };
             Lindek_List.Add(MiNodo);
             StringToListBox(Lindek_List.ToString2(), listLista);
             txtNombre.Clear();
@@ -30,9 +26,8 @@ namespace ListaSimpleCS
 
         private void btmRemove_Click(object sender, EventArgs e)
         {
-            int b = 1;
+            int b = int.Parse(txtNombre.Text);
             Lindek_List.Remove(b);
-            listLista.Items.Add(Lindek_List.ToString2());
             txtNombre.Clear();
             txtNombre.Focus();
         }

@@ -8,26 +8,31 @@ namespace ListaSimpleCS
 {
     class Nodo
     {
-		//private int dato;
-        //private string name;
-		//private Nodo? siguiente;
-        //Id es unico y no es nullo
-		public int Id
+        /// <summary>
+        /// Id es unico y no es nullo
+        /// </summary>
+        public int Id
 		{
-            get; //{ return dato; }
-            set; //{ dato = value; }
+            get;
+            set;
 		}
 
+        /// <summary>
+        /// Nombre dentro del nodo
+        /// </summary>
         public string Name
         {
-            get; //{ return name; }
-            set; //{ name = value; }
+            get;
+            set;
         }
 
+        /// <summary>
+        /// Puntero del nodo
+        /// </summary>
         public Nodo? Siguiente
         {
-            get; //{ return siguiente; }
-            set; //{ siguiente = value; }
+            get;
+            set;
         }
 
         public Nodo()

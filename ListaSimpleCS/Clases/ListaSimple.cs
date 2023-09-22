@@ -1,36 +1,42 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ListaSimpleCS.Clases
+﻿namespace ListaSimpleCS.Clases
 {
     class ListaSimple
     {
-        //private Nodo? head;
+        /// <summary>
+        /// Head controls the initial if exist else null
+        /// </summary>
+        /// 
+        private Nodo? Head;
 
+        /// <summary>
+        /// Return the next id
+        /// </summary>
         public int NextId
         {
             get { return Count() + 1; }
         }
 
-        public Nodo? Head
-        {
-            get; //{ return head; }
-            set; //{ head = value; }
-        }
-
+        /// <summary>
+        /// Constructor
+        /// </summary>
         public ListaSimple()
         {
-            Head = null;
+            Clear();
         }
 
+        /// <summary>
+        /// Limpiamos la lista (todos los nodos)
+        /// </summary>
         public void Clear()
         {
             Head = null;
         }
+        
 
+        /// <summary>
+        /// Añade un nodo a la lista
+        /// </summary>
+        /// <param name="NewNode">Nuevo nodo</param>
         public void Add(Nodo NewNode)
         {
             //Cuando la lista esta "Vacia"
