@@ -26,8 +26,14 @@ namespace ListaSimpleCS
 
         private void btmRemove_Click(object sender, EventArgs e)
         {
-            int b = int.Parse(txtNombre.Text);
+            int b = int.Parse(1.ToString());
+            if (!Lindek_List.Exist(b))
+            {
+                MessageBox.Show("This node don't exist");
+                return;
+            }
             Lindek_List.Remove(b);
+            StringToListBox(Lindek_List.ToString2(), listLista);
             txtNombre.Clear();
             txtNombre.Focus();
         }

@@ -25,33 +25,28 @@
         }
 
         /// <summary>
-        /// Limpiamos la lista (todos los nodos)
+        /// Clear to list all nodes
         /// </summary>
         public void Clear()
         {
             Head = null;
         }
-        
 
         /// <summary>
-        /// Añade un nodo a la lista
+        /// Add new node to list
         /// </summary>
         /// <param name="NewNode">Nuevo nodo</param>
         public void Add(Nodo NewNode)
         {
-            //Cuando la lista esta "Vacia"
-            if (Head == null)
+            if (IsEmpty())
             {
                 Head = NewNode;
                 return;
             }
-            //Evitar nodos duplicados con Id suplicados
-
             if (Exist(NewNode.Id))
             {
                 return;
             }
-            //La lista no esta vacia si el dato del nodo nuevo es menor al dato de head el add es al INICIO!!!
             if (NewNode.Id < Head.Id)
             {
                 NewNode.Siguiente = Head;
@@ -71,13 +66,17 @@
             h.Siguiente = NewNode;
         }
 
+        /// <summary>
+        /// Remove node from to list
+        /// </summary>
+        /// <param name="data">date in node removed</param>
         public void Remove(int data)
         {
-            if (Head == null)
+            if (IsEmpty())
             {
                 return;
             }
-            if (Head.Id == data)
+            if (Head != null && Head.Id == data)
             {
                 Head = Head.Siguiente;
                 return;
@@ -97,13 +96,18 @@
             }
         }
 
+        /// <summary>
+        /// Check if there is a node with the data entered
+        /// </summary>
+        /// <param name="data">date ingresed</param>
+        /// <returns></returns>
         public bool Exist(int data)
         {
-            if (Head == null)
+            if (IsEmpty())
             {
                 return false;
             }
-            if (Head.Id == data)
+            if (Head != null && Head.Id == data)
             {
                 return true;
             }
@@ -123,11 +127,19 @@
             return false;
         }
 
+        /// <summary>
+        /// We check if the list is empty
+        /// </summary>
+        /// <returns></returns>
         public bool IsEmpty()
         {
             return Head == null;
         }
 
+        /// <summary>
+        /// counts how many items exist in the enlist
+        /// </summary>
+        /// <returns></returns>
         public int Count() 
         {
             int c = 0;
