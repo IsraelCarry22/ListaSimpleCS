@@ -29,7 +29,7 @@ namespace ListaSimpleCS
         /// <summary>
         /// Puntero del nodo
         /// </summary>
-        public Nodo? Siguiente
+        public Nodo? Next
         {
             get;
             set;
@@ -39,21 +39,21 @@ namespace ListaSimpleCS
 		{
 			Id = 0;
             Name = "";
-            Siguiente = null;
+            Next = null;
 		}
 
         public Nodo(int d)
         {
             Id = d;
             Name = "";
-            Siguiente = null;
+            Next = null;
         }
 
         public Nodo(int d,string n, Nodo? s)
 		{
 			Id = d;
             Name = n;
-			Siguiente = s;
+			Next = s;
 		}
 
         public override string ToString()

@@ -49,21 +49,21 @@
             }
             if (NewNode.Id < Head.Id)
             {
-                NewNode.Siguiente = Head;
+                NewNode.Next = Head;
                 Head = NewNode;
                 return;
             }
             Nodo? h = Head;
-            while (h.Siguiente != null)
+            while (h.Next != null)
             {
-                if (NewNode.Id < h.Siguiente.Id)
+                if (NewNode.Id < h.Next.Id)
                 {
                     break;
                 }
-                h = h.Siguiente;
+                h = h.Next;
             }
-            NewNode.Siguiente = h.Siguiente;
-            h.Siguiente = NewNode;
+            NewNode.Next = h.Next;
+            h.Next = NewNode;
         }
 
         /// <summary>
@@ -78,21 +78,21 @@
             }
             if (Head != null && Head.Id == data)
             {
-                Head = Head.Siguiente;
+                Head = Head.Next;
                 return;
             }
             Nodo? h = Head;
-            while (h.Siguiente != null)
+            while (h.Next != null)
             {
-                if (h.Siguiente.Id == data)
+                if (h.Next.Id == data)
                 {
                     break;
                 }
-                h = h.Siguiente;
+                h = h.Next;
             }
-            if (h.Siguiente != null)
+            if (h.Next != null)
             {
-                h.Siguiente = h.Siguiente.Siguiente;
+                h.Next = h.Next.Next;
             }
         }
 
@@ -112,15 +112,15 @@
                 return true;
             }
             Nodo? h = Head;
-            while (h.Siguiente != null)
+            while (h.Next != null)
             {
-                if (h.Siguiente.Id >= data)
+                if (h.Next.Id >= data)
                 {
                     break;
                 }
-                h = h.Siguiente;
+                h = h.Next;
             }
-            if (h.Siguiente != null && h.Siguiente.Id == data)
+            if (h.Next != null && h.Next.Id == data)
             {
                 return true;
             }
@@ -147,7 +147,7 @@
             while (h != null)
             {
                 c++;
-                h = h.Siguiente;
+                h = h.Next;
             }
             return c;
         }
@@ -160,7 +160,7 @@
             while (h != null)
             {
                 r[i] += h.ToString() + " ";
-                h = h.Siguiente;
+                h = h.Next;
                 i++;
             }
             return r;
